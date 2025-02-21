@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Editar Funcionário{% endblock %}
+
+{% block title_header %}
+<h1><i class="fas fa-user-edit"></i> Editar Funcionário</h1>
+{% endblock %}
+
+{% block addcss_extra %}
+<link rel="stylesheet" href="{% static 'css/apps/rh/edit_funcionario.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="funcionario-container">
+    
+    <!-- FILTRO E SELEÇÃO DO FUNCIONÁRIO -->
+    <section class="funcionario-filtro-container">
+        <h2><i class="fas fa-search"></i> Buscar Funcionário</h2>
+        <div class="funcionario-search-group">
+            <input type="text" id="filtro-funcionario" placeholder="Digite nome ou CPF para buscar...">
+            <select id="select-funcionario" required>
+                <option value="">Selecione um funcionário</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE EDIÇÃO -->
+    <section class="funcionario-form-container" id="funcionario-info" style="display: none;">
+        <h2><i class="fas fa-id-badge"></i> Informações do Funcionário</h2>
+
+        <form id="form-editar-funcionario" class="funcionario-form-wrapper">
+            <!-- DADOS PESSOAIS -->
+            <div class="funcionario-section">
+                <h3>Dados Pessoais</h3>
+                <label for="nome_completo">Nome Completo:</label>
+                <input type="text" id="nome_completo" name="nome_completo">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" readonly>
+                <label for="rg">RG:</label>
+                <input type="text" id="rg" name="rg">
+                <label for="pis">PIS:</label>
+                <input type="text" id="pis" name="pis">
+                <label for="data_nasc">Data de Nascimento:</label>
+                <input type="date" id="data_nasc" name="data_nasc">
+                <label for="sexualidade">Gênero:</label>
+                <select id="sexualidade" name="sexualidade">
+                    <option value="">Selecione</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                </select>
+                <label for="estado_civil">Estado Civil:</label>
+                <input type="text" id="estado_civil" name="estado_civil">
+            </div>
+
+            <!-- CONTATO -->
+            <div class="funcionario-section">
+                <h3>Contato</h3>
+                <label for="celular">Celular:</label>
+                <input type="text" id="celular" name="celular">
+                <label for="telefone_fixo">Telefone Fixo:</label>
+                <input type="text" id="telefone_fixo" name="telefone_fixo">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <!-- ENDEREÇO -->
+            <div class="funcionario-section">
+                <h3>Endereço</h3>
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade">
+                <label for="uf">UF:</label>
+                <input type="text" id="uf" name="uf">
+            </div>
+
+            <!-- INFORMAÇÕES PROFISSIONAIS -->
+            <div class="funcionario-section">
+                <h3>Informações Profissionais</h3>
+                <label for="empresa">Empresa:</label>
+                <select id="empresa" name="empresa"></select>
+                <label for="departamento">Departamento:</label>
+                <select id="departamento" name="departamento"></select>
+                <label for="cargo">Cargo:</label>
+                <select id="cargo" name="cargo"></select>
+                <label for="hierarquia">Hierarquia:</label>
+                <select id="hierarquia" name="hierarquia"></select>
+                <label for="equipe">Equipe:</label>
+                <select id="equipe" name="equipe"></select>
+                <label for="loja">Loja:</label>
+                <select id="loja" name="loja"></select>
+                <label for="horario">Horário de Trabalho:</label>
+                <select id="horario" name="horario"></select>
+            </div>
+
+            <!-- DADOS DE CONTRATAÇÃO -->
+            <div class="funcionario-section">
+                <h3>Dados de Contratação</h3>
+                <label for="tipo_contratacao">Tipo de Contratação:</label>
+                <input type="text" id="tipo_contratacao" name="tipo_contratacao">
+                <label for="data_admissao">Data de Admissão:</label>
+                <input type="date" id="data_admissao" name="data_admissao">
+                <label for="status">Status:</label>
+                <select id="status" name="status">
+                    <option value="ativo">Ativo</option>
+                    <option value="inativo">Inativo</option>
+                </select>
+            </div>
+
+            <!-- BOTÃO DE SALVAR -->
+            <button type="submit" id="salvar-funcionario">Salvar Alterações</button>
+        </form>
+    </section>
+
+    <!-- LISTA DE ARQUIVOS -->
+    <section class="funcionario-files-container" id="funcionario-arquivos" style="display: none;">
+        <h2><i class="fas fa-file-alt"></i> Arquivos do Funcionário</h2>
+        <table class="funcionario-table">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Arquivo</th>
+                    <th>Data de Criação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Os arquivos serão inseridos aqui pelo JavaScript -->
+            </tbody>
+        </table>
+    </section>
+</div>
+{% endblock %}
+
+{% block addjs_extra %}
+<script src="{% static 'js/apps/rh/edit_funcionario.js' %}"></script>
+{% endblock %}

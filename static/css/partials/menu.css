@@ -1,0 +1,176 @@
+/* Menu lateral */
+.sidebar {
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #142650;
+    color: #fff;
+    padding: 15px;
+    overflow-y: auto;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estado colapsado */
+.sidebar.collapsed {
+    width: 70px;
+}
+
+/* Ocultar texto dos itens quando colapsado */
+.sidebar.collapsed .menu-text {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Logo */
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+    max-width: 120px;
+    transition: max-width 0.4s ease-in-out;
+}
+
+.sidebar.collapsed .logo img {
+    max-width: 40px;
+}
+
+/* Botão de toggle */
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.collapsed .menu-toggle {
+    transform: rotate(180deg);
+}
+
+/* Lista do menu */
+.sidebar .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .menu-list li {
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+/* Links do menu */
+.sidebar .menu-list li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, padding-left 0.2s;
+}
+
+.sidebar .menu-list li a i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.sidebar .menu-list li a:hover {
+    background-color: #0bd5f0;
+    padding-left: 18px;
+}
+
+/* Categoria do menu */
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 12px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.category-header:hover {
+    background-color: #0bd5f0;
+}
+
+/* Ícone do menu de categorias */
+.toggle-category {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Submenu */
+.category-items {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.category-items.active {
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ícone rotacionado ao abrir submenu */
+.category-header.open .toggle-category {
+    transform: rotate(180deg);
+}
+
+/* Responsividade */
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+    .sidebar.collapsed {
+        width: 60px;
+    }
+    .sidebar .menu-list li a {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+    .sidebar .menu-list li a i {
+        font-size: 1rem;
+    }
+    .category-header {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 180px;
+        padding: 10px;
+    }
+    .sidebar.collapsed {
+        width: 55px;
+    }
+    .sidebar .logo img {
+        max-width: 100px;
+    }
+    .sidebar.collapsed .logo img {
+        max-width: 35px;
+    }
+    .sidebar .menu-list li a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+    .sidebar .menu-list li a i {
+        font-size: 0.9rem;
+    }
+}

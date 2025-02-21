@@ -1,0 +1,90 @@
+/* base.css - Estilos básicos para o base.html */
+
+/* Paleta de cores */
+:root {
+    --color-primary: #142650;
+    --color-secondary: #70f611;
+    --color-tertiary: #0bd5f0;
+    --color-accent: #b4874c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+/* Estilos para o menu de navegação */
+nav {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/* Estilos para a área principal */
+main {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow-y: hidden;
+    height: 100vh;
+}
+
+/* ================== HEADER ================== */
+
+/* Estilos gerais para o header */
+header {
+    background-color: #e4fbdcd4; /* Quase branco */
+    color: #333; /* Texto escuro para contraste */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-left-radius: 40px; /* Arredondamento apenas na parte inferior esquerda */
+    border-bottom-right-radius: 40px; /* Arredondamento apenas na parte inferior direita */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar destaque */
+}
+
+/* Título dentro do header */
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Estilos para a área de usuário (username + logout) */
+.user-info {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Nome do usuário */
+.user-info span {
+    font-weight: bold;
+    color: #555; /* Um tom de cinza mais escuro para visibilidade */
+}
+
+/* Botão de logout */
+.user-info a {
+    text-decoration: none;
+    color: #d9534f; /* Vermelho suave */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.user-info a:hover {
+    color: #c9302c; /* Vermelho mais forte no hover */
+}

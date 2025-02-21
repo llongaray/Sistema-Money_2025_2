@@ -1,0 +1,166 @@
+/* ======== CONTAINER GERAL ======== */
+.campanha-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+    height: 100%;
+    padding: 30px 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+/* ======== FORMULÁRIO DE CAMPANHA ======== */
+.campanha-form-container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.campanha-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campanha-form-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #0bd5f0;
+    margin-bottom: 10px;
+}
+
+/* ======== INPUTS & SELETORES ======== */
+.campanha-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.campanha-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #142650;
+}
+
+.campanha-input,
+.campanha-select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #ffffff;
+    color: #142650;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.campanha-input:focus,
+.campanha-select:focus {
+    border-color: #0bd5f0;
+    box-shadow: 0 0 10px rgba(11, 213, 240, 0.4);
+    outline: none;
+}
+
+/* ======== BOTÃO ======== */
+.campanha-button {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #0bd5f0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.campanha-button:hover {
+    background-color: #089bbf;
+    transform: scale(1.05);
+}
+
+/* ======== TABELA DE CAMPANHAS ======== */
+.campanha-table-container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.campanha-table-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #0bd5f0;
+    margin-bottom: 15px;
+}
+
+.campanha-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.campanha-th,
+.campanha-td {
+    padding: 15px;
+    text-align: center; /* Centralizando conteúdo */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: #142650;
+}
+
+.campanha-th {
+    background: #0bd5f0;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.campanha-td {
+    background: #f8f9fa;
+}
+
+/* ======== STATUS INTERATIVO ======== */
+.campanha-status-toggle {
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.5em;
+    transition: color 0.3s ease-in-out, transform 0.2s;
+}
+
+.campanha-status-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* Status ativo (verde) e inativo (vermelho) */
+.campanha-status-icon.active {
+    color: #70f611;
+}
+
+.campanha-status-icon.inactive {
+    color: #ff4b4b;
+}
+
+/* ======== MENSAGEM DE FEEDBACK ======== */
+.campanha-feedback {
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.campanha-feedback.success {
+    background-color: #70f611;
+    color: white;
+}
+
+.campanha-feedback.error {
+    background-color: #ff4b4b;
+    color: white;
+}

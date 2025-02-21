@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Cadastro de Novo Usuário{% endblock %}
+
+{% block title_header %}
+<h1><i class="fas fa-user-shield"></i> Cadastro de Novo Usuário</h1>
+{% endblock %}
+
+{% block addcss_extra %}
+<link rel="stylesheet" href="{% static 'css/apps/forms.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <form id="form-usuario" class="form-wrapper">
+        <!-- SELEÇÃO DE FUNCIONÁRIO -->
+        <section class="form-section">
+            <h2><i class="fas fa-user"></i> Seleção de Funcionário</h2>
+            <div class="form-group">
+                <label>Funcionário:</label>
+                <select name="funcionario_id" required></select>
+            </div>
+        </section>
+
+        <!-- DADOS DO USUÁRIO -->
+        <section class="form-section">
+            <h2><i class="fas fa-user-lock"></i> Dados do Usuário</h2>
+            <div class="form-group">
+                <label>Nome de Usuário:</label>
+                <input type="text" name="username" required>
+                <small id="username-feedback" class="feedback"></small>
+            </div>
+            <div class="form-group">
+                <label>Senha:</label>
+                <input type="password" name="password" required>
+                <small id="password-feedback" class="feedback"></small>
+            </div>
+        </section>
+
+        <!-- BOTÃO DE ENVIO -->
+        <button type="submit">Criar Usuário</button>
+    </form>
+
+    <!-- MENSAGENS DE FEEDBACK -->
+    <div id="mensagem-feedback"></div>
+</div>
+{% endblock %}
+
+{% block addjs_extra %}
+<script src="{% static 'js/apps/rh/novo_usuario.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Projeto{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="{% static 'css/bases/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/partials/menu.css' %}">
+    {% block addcss_extra %}{% endblock %}
+
+
+</head>
+<body>
+    <nav>
+        {% include 'partials/_menu.html' %}
+    </nav>
+
+    <main>
+        <header>
+            {% block title_header %}<h1>Meu Projeto</h1>{% endblock %}
+            {% if user.is_authenticated %}
+                <div class="user-info">
+                    <span>Olá, {{ user.username }}</span>
+                    <a href="{% url 'usuarios:logout' %}" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Sair
+                    </a>
+                </div>
+            {% endif %}
+        </header>
+        
+        {% block content %}{% endblock %}
+        <footer>
+            {% block footer %}{% endblock %}
+        </footer>
+    </main>
+    
+    <!-- Adicione esta linha no HEAD do seu HTML -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/partials/menu.js' %}"></script>
+    {% block addjs_extra %}{% endblock %}
+</body>
+</html>

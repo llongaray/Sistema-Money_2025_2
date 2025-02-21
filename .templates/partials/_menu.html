@@ -1,0 +1,92 @@
+{% load static %}
+
+<!-- Menu Lateral -->
+<div class="sidebar" id="sidebar">
+    <div class="logo">
+        <a href="/">
+            <img src="{% static 'geral/logo-horizontal.png' %}" alt="Logo da Empresa" class="menu-logo">
+        </a>
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+    </div>
+
+    <ul class="menu-list">
+        <!-- Categoria Vendas -->
+        <li class="menu-category">
+            <div class="category-header">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Vendas</span>
+                <i class="fas fa-chevron-down toggle-category"></i>
+            </div>
+            <ul class="category-items">
+                <li><a href="#"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+                <li><a href="#"><i class="fas fa-file-alt"></i> <span>Registro Money</span></a></li>
+                <li><a href="{% url 'vendas:campanhas' %}"><i class="fas fa-bullhorn"></i> <span>Campanhas</span></a></li>
+                <li><a href="#"><i class="fas fa-upload"></i> <span>Importar Bases</span></a></li>
+            </ul>
+        </li>
+
+        <!-- Categoria SIAPE -->
+        <li class="menu-category">
+            <div class="category-header">
+                <i class="fas fa-users"></i>
+                <span>SIAPE</span>
+                <i class="fas fa-chevron-down toggle-category"></i>
+            </div>
+            <ul class="category-items">
+                <li><a href="#"><i class="fas fa-chart-bar"></i> <span>Ranking</span></a></li>
+                <li><a href="#"><i class="fas fa-search"></i> <span>Consulta Cliente</span></a></li>
+                <li><a href="#"><i class="fas fa-credit-card"></i> <span>Consulta Cartão</span></a></li>
+                <li><a href="#"><i class="fas fa-user-plus"></i> <span>Cadastro TAC</span></a></li>
+            </ul>
+        </li>
+
+        <!-- Categoria RH -->
+        <li class="menu-category">
+            <div class="category-header">
+                <i class="fas fa-user-tie"></i>
+                <span>RH</span>
+                <i class="fas fa-chevron-down toggle-category"></i>
+            </div>
+            <ul class="category-items">
+                <li><a href="{% url 'rh:render_categorias' %}"><i class="fas fa-list"></i> <span>Categorias RH</span></a></li>
+                <li><a href="{% url 'rh:render_funcionarios' %}"><i class="fas fa-user-plus"></i> <span>Novo Funcionário</span></a></li>
+                <li><a href="{% url 'rh:render_edit_funcionario' %}"><i class="fas fa-edit"></i> <span>Editar Funcionários</span></a></li>
+                <li><a href="{% url 'rh:render_usuarios' %}"><i class="fas fa-user-cog"></i> <span>Gerenciar Usuários</span></a></li>
+                <li><a href="{% url 'rh:render_arquivos_funcionario' %}"><i class="fas fa-folder"></i> <span>Arquivos Funcionários</span></a></li>
+            </ul>
+        </li>
+
+
+        <!-- Categoria TI -->
+        <li class="menu-category">
+            <div class="category-header">
+                <i class="fas fa-cogs"></i>
+                <span>TI</span>
+                <i class="fas fa-chevron-down toggle-category"></i>
+            </div>
+            <ul class="category-items">
+                <li><a href="#"><i class="fas fa-envelope"></i> <span>Controle E-mails</span></a></li>
+                <li><a href="#"><i class="fas fa-sim-card"></i> <span>Controle CHIPs</span></a></li>
+                <li><a href="#"><i class="fas fa-phone"></i> <span>Controle Ramais</span></a></li>
+                <li><a href="#"><i class="fas fa-desktop"></i> <span>Controle PAs</span></a></li>
+                <li><a href="#"><i class="fas fa-tools"></i> <span>Controle Equipamentos</span></a></li>
+                <li><a href="#"><i class="fas fa-ticket-alt"></i> <span>Tickets</span></a></li>
+                <li><a href="{% url 'ti:dashboard_ti' %}"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+            </ul>
+        </li>
+
+        <!-- Categoria Diretoria -->
+        <li class="menu-category">
+            <div class="category-header">
+                <i class="fas fa-briefcase"></i>
+                <span>Diretoria</span>
+                <i class="fas fa-chevron-down toggle-category"></i>
+            </div>
+            <ul class="category-items">
+                <li><a href="#"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

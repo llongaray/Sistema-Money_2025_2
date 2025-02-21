@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Adicionar Arquivo do Funcionário{% endblock %}
+
+{% block title_header %}
+<h1><i class="fas fa-file-upload"></i> Adicionar Arquivo do Funcionário</h1>
+{% endblock %}
+
+{% block addcss_extra %}
+<link rel="stylesheet" href="{% static 'css/apps/forms.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <form id="form-arquivo-funcionario" class="form-wrapper" enctype="multipart/form-data">
+        
+        <!-- FILTRO E SELEÇÃO DO FUNCIONÁRIO -->
+        <section class="form-section">
+            <h2><i class="fas fa-search"></i> Buscar Funcionário</h2>
+            <div class="form-group">
+                <label>Filtrar Funcionário:</label>
+                <input type="text" id="filtro-funcionario" placeholder="Digite parte do nome para filtrar">
+            </div>
+            <div class="form-group">
+                <label>Selecionar Funcionário:</label>
+                <select name="funcionario_id" id="select-funcionario" required>
+                    <option value="">Selecione um funcionário</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- DADOS DO ARQUIVO -->
+        <section class="form-section">
+            <h2><i class="fas fa-file-alt"></i> Informações do Arquivo</h2>
+            <div class="form-group">
+                <label>Título do Arquivo:</label>
+                <input type="text" name="titulo" id="titulo-arquivo" required>
+                <div id="titulo-feedback" class="alerta-titulo"></div> <!-- Mensagem de erro aqui -->
+            </div>
+            <div class="form-group">
+                <label>Descrição:</label>
+                <textarea name="descricao" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Arquivo (Apenas PDF):</label>
+                <input type="file" name="file" accept="application/pdf" required>
+            </div>
+        </section>
+
+        <!-- BOTÃO DE ENVIO -->
+        <button type="submit" id="btn-submit">Enviar Arquivo</button>
+    </form>
+
+    <!-- MENSAGENS DE FEEDBACK -->
+    <div id="mensagem-feedback"></div>
+</div>
+{% endblock %}
+
+{% block addjs_extra %}
+<script src="{% static 'js/apps/rh/arquivos_funcionario.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,202 @@
+/* ======== CONTAINER GERAL ======== */
+.funcionario-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+    height: 100%;
+    padding: 30px 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    overflow-y: auto;
+}
+
+/* ======== FILTRO DE FUNCIONÁRIOS ======== */
+.funcionario-filtro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.funcionario-search-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    justify-content: center;
+}
+
+#filtro-funcionario {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+#filtro-funcionario:focus {
+    border-color: #0bd5f0;
+    box-shadow: 0 0 10px rgba(11, 213, 240, 0.4);
+    outline: none;
+}
+
+#select-funcionario {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+#select-funcionario:focus {
+    border-color: #70f611;
+    box-shadow: 0 0 10px rgba(112, 246, 17, 0.4);
+    outline: none;
+}
+
+/* ======== FORMULÁRIO DO FUNCIONÁRIO ======== */
+.funcionario-form-container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.funcionario-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ======== SEÇÕES DO FORMULÁRIO ======== */
+.funcionario-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.funcionario-section h3 {
+    font-size: 1.4rem;
+    color: #142650;
+    margin-bottom: 15px;
+    border-left: 4px solid #0bd5f0;
+    padding-left: 10px;
+}
+
+/* ======== INPUTS & SELETORES ======== */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #142650;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    background: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus, select:focus {
+    border-color: #0bd5f0;
+    box-shadow: 0 0 10px rgba(11, 213, 240, 0.4);
+    outline: none;
+}
+
+/* ======== BOTÃO ======== */
+#salvar-funcionario {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #0bd5f0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    width: 100%;
+}
+
+#salvar-funcionario:hover {
+    background-color: #089bbf;
+    transform: scale(1.05);
+}
+
+/* ======== TABELA DE ARQUIVOS ======== */
+.funcionario-files-container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.funcionario-files-container h2 {
+    font-size: 1.4rem;
+    color: #142650;
+    margin-bottom: 15px;
+    border-left: 4px solid #70f611;
+    padding-left: 10px;
+}
+
+.funcionario-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.funcionario-table th,
+.funcionario-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: #142650;
+}
+
+.funcionario-table th {
+    background: #0bd5f0;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.funcionario-table td {
+    background: #f8f9fa;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+    .funcionario-container {
+        padding: 20px;
+    }
+
+    .funcionario-search-group {
+        flex-direction: column;
+    }
+
+    #filtro-funcionario, #select-funcionario {
+        width: 100%;
+    }
+
+    .funcionario-section {
+        padding: 15px;
+    }
+}

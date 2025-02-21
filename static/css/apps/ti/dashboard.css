@@ -1,0 +1,230 @@
+/* ================== GERAL ================== */
+
+/* Container principal do Dashboard */
+.dashboard-container {
+    width: calc(100% - var(--menu-width)); /* Ocupa 100% menos a largura do menu */
+    margin-left: var(--menu-width); /* Considera o menu lateral */
+    padding: 20px;
+    background-color: #f5f5f5; /* Fundo mais escuro que os cards */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Seções */
+.dashboard-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Agrupamento de controles */
+.control-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Cartões */
+.card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    transition: transform 0.2s;
+    min-width: 280px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ================== MINICARDS ================== */
+.mini-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.mini-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mini-card i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+/* Minicard Ativo (Verde) */
+.mini-card-active {
+    background-color: #28a745;
+}
+
+/* Minicard Inativo (Vermelho) */
+.mini-card-inactive {
+    background-color: #dc3545;
+}
+
+/* ================== TABELAS ================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Status */
+.status-active {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-inactive {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.status-warning {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* ================== SEÇÃO DE PAs ================== */
+.pa-section {
+    text-align: center;
+    background: #ffffff;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título com ícone */
+.pa-section h2 i {
+    margin-right: 8px;
+    color: #0bd5f0;
+}
+
+/* Container dos PAs */
+.pa-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-height: 450px; /* Define um tamanho fixo */
+    overflow-y: auto; /* Scroll quando houver mais de duas linhas */
+    padding: 10px;
+}
+
+/* Estilo dos Cards de PA */
+.pa-card {
+    background: #fff;
+    color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.pa-card:hover {
+    transform: scale(1.05);
+}
+
+/* Ícone grande dentro dos Cards */
+.pa-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Ícone do PA muda de cor conforme o status */
+.pa-card.status-active .pa-icon,
+.pa-card .status-active i {
+    color: #28a745; /* Verde */
+}
+
+.pa-card.status-inactive .pa-icon,
+.pa-card .status-inactive i {
+    color: #dc3545; /* Vermelho */
+}
+
+.pa-card.status-warning .pa-icon,
+.pa-card .status-warning i {
+    color: #ffcc00; /* Amarelo */
+}
+
+/* Informações do PA */
+.pa-card p {
+    font-size: 0.95rem;
+    margin: 5px 0;
+}
+
+/* Ícones dentro dos textos */
+.pa-card p i {
+    margin-right: 5px;
+}
+
+/* Status */
+.pa-status {
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Scroll Estilizado */
+.pa-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.pa-container::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 10px;
+}
+
+.pa-container::-webkit-scrollbar-thumb {
+    background: #0bd5f0;
+    border-radius: 10px;
+}
+
+/* ================== RESPONSIVIDADE ================== */
+@media screen and (max-width: 1024px) {
+    .dashboard-container {
+        width: 100%;
+        margin-left: 0;
+    }
+    .pa-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pa-container {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Campanhas{% endblock %}
+
+{% block title_header %}
+<h1><i class="fas fa-bullhorn"></i> Campanhas</h1>
+{% endblock %}
+
+{% block addcss_extra %}
+<link rel="stylesheet" href="{% static 'apps/vendas/campanhas.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- CONTAINER GERAL -->
+<div class="campanha-container">
+
+    <!-- FORMULÁRIO DE NOVA CAMPANHA -->
+    <div class="campanha-form-container">
+        <form id="form-campanha" class="campanha-form-wrapper">
+            <h2 class="campanha-form-title"><i class="fas fa-plus-circle"></i> Criar Nova Campanha</h2>
+
+            <div class="campanha-form-group">
+                <label class="campanha-label">Título da Campanha:</label>
+                <input type="text" name="titulo" class="campanha-input" required>
+            </div>
+            <div class="campanha-form-group">
+                <label class="campanha-label">Equipe:</label>
+                <select name="equipe_id" class="campanha-select" required>
+                    <option value="">Selecione uma equipe</option>
+                </select>
+            </div>
+
+            <button type="submit" class="campanha-button">Criar Campanha</button>
+        </form>
+
+        <div id="campanha-mensagem-feedback" class="campanha-feedback"></div>
+    </div>
+
+    <!-- TABELA DE CAMPANHAS -->
+    <div class="campanha-table-container">
+        <h2 class="campanha-table-title"><i class="fas fa-list"></i> Campanhas Cadastradas</h2>
+        <table id="tabela-campanhas" class="campanha-table">
+            <thead>
+                <tr>
+                    <th class="campanha-th">Título</th>
+                    <th class="campanha-th">Equipe</th>
+                    <th class="campanha-th">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Campanhas serão inseridas aqui via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block addjs_extra %}
+<script src="{% static 'js/apps/vendas/campanhas.js' %}"></script>
+{% endblock %}

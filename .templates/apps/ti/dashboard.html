@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Dashboard de TI{% endblock %}
+
+{% block title_header %}
+<h1>Dashboard de TI</h1>
+{% endblock %}
+
+{% block addcss_extra %}
+    <link rel="stylesheet" href="{% static 'css/apps/ti/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    
+    <!-- Seção: Controles -->
+    <section class="dashboard-section">
+        <h2>Controles</h2>
+        <div class="control-group">
+            <!-- Card: Controle de E-mails -->
+            <div class="card">
+                <h3>Controle de E-mails</h3>
+                
+                <!-- Minicards -->
+                <div class="mini-cards">
+                    <div class="mini-card mini-card-active">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <p>E-mails Ativos</p>
+                        <strong>150</strong>
+                    </div>
+                    <div class="mini-card mini-card-inactive">
+                        <i class="fas fa-envelope"></i>
+                        <p>E-mails Inativos</p>
+                        <strong>50</strong>
+                    </div>
+                </div>
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Funcionário</th>
+                            <th>E-mail</th>
+                            <th>Data Criação</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>João Silva</td>
+                            <td>joao@empresa.com</td>
+                            <td>01/02/2024</td>
+                            <td class="status-active">Ativo</td>
+                        </tr>
+                        <tr>
+                            <td>Maria Souza</td>
+                            <td>maria@empresa.com</td>
+                            <td>10/02/2024</td>
+                            <td class="status-inactive">Inativo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+
+            <!-- Card: Controle de Chips -->
+            <div class="card">
+                <h3>Controle de CHIPs</h3>
+            
+                <!-- Minicards -->
+                <div class="mini-cards">
+                    <div class="mini-card mini-card-active">
+                        <i class="fas fa-sim-card"></i>
+                        <p>CHIPs Ativos</p>
+                        <strong>50</strong>
+                    </div>
+                    <div class="mini-card mini-card-inactive">
+                        <i class="fas fa-sim-card"></i>
+                        <p>CHIPs Inativos</p>
+                        <strong>10</strong>
+                    </div>
+                </div>
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Funcionário</th>
+                            <th>Equipe</th>
+                            <th>Chip Nº</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Carlos Lima</td>
+                            <td>Suporte</td>
+                            <td>12345</td>
+                            <td class="status-active">Ativo</td>
+                        </tr>
+                        <tr>
+                            <td>Ana Paula</td>
+                            <td>Redes</td>
+                            <td>67890</td>
+                            <td class="status-inactive">Inativo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Seção: PAs -->
+    <section class="dashboard-section pa-section">
+        <h2><i class="fas fa-network-wired"></i> Posições de Atendimento (PAs)</h2>
+        <div class="pa-container">
+
+            <!-- PA 1 - Em Uso (com funcionário) -->
+            <div class="pa-card status-active">
+                <i class="fas fa-desktop pa-icon status-active"></i>
+                <h3>PA-01</h3>
+                <p><i class="fas fa-door-open"></i> Sala: <strong>101</strong></p>
+                <p><i class="fas fa-user"></i> Funcionário: <strong>João Silva</strong></p>
+                <p class="pa-status status-active"><i class="fas fa-check-circle"></i> Em Uso</p>
+            </div>
+
+            <!-- PA 2 - Em Uso (com funcionário) -->
+            <div class="pa-card status-active">
+                <i class="fas fa-desktop pa-icon status-active"></i>
+                <h3>PA-02</h3>
+                <p><i class="fas fa-door-open"></i> Sala: <strong>102</strong></p>
+                <p><i class="fas fa-user"></i> Funcionário: <strong>Ana Souza</strong></p>
+                <p class="pa-status status-active"><i class="fas fa-check-circle"></i> Em Uso</p>
+            </div>
+
+            <!-- PA 3 - Sem Uso -->
+            <div class="pa-card status-inactive">
+                <i class="fas fa-desktop pa-icon status-inactive"></i>
+                <h3>PA-03</h3>
+                <p><i class="fas fa-door-open"></i> Sala: <strong>103</strong></p>
+                <p class="pa-status status-inactive"><i class="fas fa-times-circle"></i> Sem Uso</p>
+            </div>
+
+            <!-- PA 4 - Manutenção -->
+            <div class="pa-card status-warning">
+                <i class="fas fa-desktop pa-icon status-warning"></i>
+                <h3>PA-04</h3>
+                <p><i class="fas fa-door-open"></i> Sala: <strong>104</strong></p>
+                <p class="pa-status status-warning"><i class="fas fa-exclamation-circle"></i> Manutenção</p>
+            </div>
+
+            <!-- PA 5 - Em Uso (com funcionário) -->
+            <div class="pa-card status-active">
+                <i class="fas fa-desktop pa-icon status-active"></i>
+                <h3>PA-05</h3>
+                <p><i class="fas fa-door-open"></i> Sala: <strong>105</strong></p>
+                <p><i class="fas fa-user"></i> Funcionário: <strong>Carlos Lima</strong></p>
+                <p class="pa-status status-active"><i class="fas fa-check-circle"></i> Em Uso</p>
+            </div>
+
+            <!-- PA 6 - Manutenção -->
+            <div class="pa-card status-warning">
+                <i class="fas fa-desktop pa-icon status-warning"></i>
+                <h3>PA-06</h3>
+                <p><i class="fas fa-door-open"></i> Sala: <strong>106</strong></p>
+                <p class="pa-status status-warning"><i class="fas fa-exclamation-circle"></i> Manutenção</p>
+            </div>
+
+        </div>
+    </section>
+
+    
+
+    <!-- Seção: Estoque -->
+    <section class="dashboard-section">
+        <h2>Estoque de Periféricos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Em Uso</th>
+                    <th>Disponíveis</th>
+                    <th>Em Manutenção</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monitores</td>
+                    <td>25</td>
+                    <td>5</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Teclados</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+{% endblock %}
+
+{% block addjs_extra %}
+    <script src="{% static 'js/apps/ti/dashboard.js' %}"></script>
+{% endblock %}

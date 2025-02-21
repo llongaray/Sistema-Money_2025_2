@@ -1,0 +1,114 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização do body com background moderno */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #142650, #0bd5f0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container centralizado para o card de login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Card do login com sombra e bordas arredondadas */
+.login-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Título do login */
+.login-card h2 {
+    margin-bottom: 20px;
+    color: #142650;
+}
+
+/* Grupo de input com ícones */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Ícones dentro dos inputs */
+.input-group i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #142650;
+}
+
+/* Estilo dos inputs */
+.input-group input {
+    width: 100%;
+    padding: 10px 15px 10px 45px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* Foco no input */
+.input-group input:focus {
+    border-color: #0bd5f0;
+}
+
+/* Botão de alternar visibilidade da senha */
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #142650;
+}
+
+/* Botão de envio */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #70f611;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #5ec00d;
+}
+
+/* Link de senha esquecida */
+.forgot-password {
+    margin-top: 15px;
+}
+
+.forgot-password a {
+    color: #142650;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
